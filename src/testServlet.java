@@ -21,6 +21,7 @@ public class testServlet extends HttpServlet{
     private void createXML(HttpServletRequest request, HttpServletResponse response, String type) throws IOException {
         response.setContentType("text/xml;charset=UTF-8");
         PrintWriter pw = response.getWriter();
+        pw.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
         pw.append("<request_detail>\n");
         pw.append("<client_info>\n");
         String ipAddress = request.getHeader("X-FORWARDED-FOR");
